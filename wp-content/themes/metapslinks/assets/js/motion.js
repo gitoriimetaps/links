@@ -1,5 +1,7 @@
 $(function() {
 
+	$('.product-card').matchHeight();
+
 //グローバルメニュー 200pxスクロールで背景クラス付与/削除
 	$(window).scroll(function () {
 		var s = $(this).scrollTop();
