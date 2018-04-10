@@ -1,6 +1,19 @@
-$(function() {
 
+
+$(function() {
+	//メニュースクロール
+	var headerHight = 0;
+	$('a.btn-ankerlink').click(function(){
+		var href= $(this).attr("href");
+		var target = $(href == "#" || href == "" ? 'html' : href);
+		var position = target.offset().top-headerHight;
+		$("html, body").animate({scrollTop:position}, 550, "swing");
+		return false;
+	});
+
+	//プロダクトボックス高さ合わせる
 	$('.product-card').matchHeight();
+
 
 //グローバルメニュー 200pxスクロールで背景クラス付与/削除
 	$(window).scroll(function () {
